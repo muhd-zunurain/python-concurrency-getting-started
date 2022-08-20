@@ -27,8 +27,8 @@ class ThumbnailMakerService(object):
         start = time.perf_counter()
         for url in img_url_list:
             # download each image and save to the input dir 
-            img_filename = urlparse(url).path.split('/')[-1]
-            urlretrieve(url, self.input_dir + os.path.sep + img_filename)
+            img_filename = urlparse(url).path.split('/')[-1]#Saving file name
+            urlretrieve(url, self.input_dir + os.path.sep + img_filename) #download the file
         end = time.perf_counter()
 
         logging.info("downloaded {} images in {} seconds".format(len(img_url_list), end - start))
